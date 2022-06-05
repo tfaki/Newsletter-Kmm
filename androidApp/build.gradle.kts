@@ -1,6 +1,8 @@
 plugins {
     id("com.android.application")
     kotlin("android")
+    kotlin("kapt")
+    id("dagger.hilt.android.plugin")
 }
 
 val composeVersion = "1.2.0-alpha01"
@@ -34,7 +36,19 @@ dependencies {
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
 
     implementation("androidx.activity:activity-compose:1.4.0")
+    implementation("androidx.compose.runtime:runtime-livedata:1.2.0-beta03")
     implementation("androidx.compose.ui:ui:$composeVersion")
     implementation("androidx.compose.material:material:$composeVersion")
     implementation("androidx.compose.ui:ui-tooling:$composeVersion")
+
+    //coil
+    val version = "0.13.0"
+    implementation("com.google.accompanist:accompanist-coil:${version}")
+
+    //hilt
+    val hiltVersion = "2.41"
+    val hiltNavigationVersion = "1.0.0-alpha03"
+    implementation("com.google.dagger:hilt-android:$hiltVersion")
+    implementation("androidx.hilt:hilt-navigation:$hiltNavigationVersion")
+    kapt("com.google.dagger:hilt-compiler:$hiltVersion")
 }
