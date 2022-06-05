@@ -19,6 +19,7 @@ MVP sample created for Kotlin Multiplatform Mobile using NewsApi
 </p>
 
 ## iOS (Coming Soon)
+Will be developed with SwiftUi
 
 ## Tech Stack
 - Kotlin
