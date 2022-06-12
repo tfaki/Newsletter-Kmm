@@ -3,14 +3,13 @@ import shared
 
 struct ContentView: View {
 	let greet = Greeting().greeting()
+    @ObservedObject private(set) var viewModel: ContentViewModel
 
 	var body: some View {
-		Text("Hello World!")
+        let list = viewModel.topHeadlines.articles
+        List(list!.indices) { topHeadlines in
+            Text("Helloo")
+        }
 	}
-}
 
-struct ContentView_Previews: PreviewProvider {
-	static var previews: some View {
-		ContentView()
-	}
 }
