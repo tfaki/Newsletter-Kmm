@@ -12,18 +12,13 @@ import shared
 
 class ContentViewModel : ObservableObject {
     @Published
-    var topHeadlines: TopHeadlinesResponse
+    var topHeadlines = [Article]()
     
-    private let topHeadlinesRepo: TopHeadlineRepository
-    
-    init(topHeadlinesRepo: TopHeadlineRepository?, topheadLines: TopHeadlinesResponse?) {
-        self.topHeadlinesRepo = topHeadlinesRepo!
-        self.topHeadlines = topheadLines!
-    }
+    private let topHeadlinesRepo: TopHeadlineRepository? = TopHeadlineRepository()
     
     func getTopHeadlines() {
-        topHeadlinesRepo.getTopHeadlinesData(completionHandler: { response, error in
-            self.topHeadlines = response!
+        topHeadlinesRepo?.getTopHeadlinesData(completionHandler: { response, error in
+            self.topHeadlines = (response?.articles)!
         })
     }
 }
