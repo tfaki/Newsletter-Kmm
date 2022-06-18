@@ -9,7 +9,6 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -27,8 +26,8 @@ import com.talhafaki.newsletter.domain.model.Article
 fun MainScreen(
     viewModel: MainViewModel
 ) {
-    val state = viewModel.getTopHeadlines().observeAsState()
-    MainContent(newsList = state.value?.articles)
+    val response  = viewModel.state.value
+    MainContent(newsList = response.articles)
 }
 
 @Composable
