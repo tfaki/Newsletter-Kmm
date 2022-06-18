@@ -8,20 +8,43 @@
 
 MVP sample created for Kotlin Multiplatform Mobile using NewsApi
 
-## Android GIF
-<p>
- <img align="center" src="newsletter.gif" width="300" height="550"/>
-</p>
+<table style="padding:10px">
+	<tr>
+		<td align="center">
+			<h2>Android App</h2>
+		</td>
+		<td align="center">
+			<h2>IOS App</h2>
+		</td>
+  	</tr>
+	<tr>
+    	<td align="center">
+			<img src="newsletter.png" alt="Android App" width="300"/>
+    	</td>
+		<td align="center">
+			<img src="newsletter_ios.png" alt="iOS App" width="300"/>
+    	</td>
+  	</tr>
+</table>
 
-## Android ScreenShot
-<p>
- <img align="center" src="newsletter.png" width="300" height="550"/>
-</p>
-
-## iOS ScreenShot
-<p>
- <img align="center" src="newsletter_ios.png" width="300" height="550"/>
-</p>
+<table style="padding:10px">
+	<tr>
+		<td align="center">
+			<h2>Android GIF</h2>
+		</td>
+		<td align="center">
+			<h2>IOS GIF</h2>
+		</td>
+  	</tr>
+	<tr>
+    	<td align="center">
+			<img src="newsletter.gif" alt="Android App" width="300"/>
+    	</td>
+		<td align="center">
+			<img src="newsletter_ios.gif" alt="iOS App" width="300"/>
+    	</td>
+  	</tr>
+</table>
 
 ## Tech Stack
 - Kotlin
