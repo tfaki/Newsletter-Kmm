@@ -1,14 +1,11 @@
 package com.talhafaki.newsletter.android.ui
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
+import androidx.compose.runtime.MutableState
+import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
-import com.talhafaki.newsletter.data.TopHeadlineRepository
 import com.talhafaki.newsletter.domain.model.TopHeadlinesResponse
+import com.talhafaki.newsletter.interactors.GetNews
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 /**
@@ -17,17 +14,19 @@ import javax.inject.Inject
 
 @HiltViewModel
 class MainViewModel @Inject constructor(
-    private val topHeadlineRepository: TopHeadlineRepository
+    private val getNews: GetNews
 ) : ViewModel() {
 
-    fun getTopHeadlines(): LiveData<TopHeadlinesResponse> {
-        val ld = MutableLiveData<TopHeadlinesResponse>()
+    val state: MutableState<TopHeadlinesResponse> = mutableStateOf(TopHeadlinesResponse())
 
-        viewModelScope.launch(Dispatchers.IO) {
-            val response = topHeadlineRepository.getTopHeadlinesData()
-            ld.postValue(response)
+    init {
+        getNews()
+    }
+
+    private fun getNews() {
+        getNews.execute().collectCommon {
+            state.value = it
         }
-        return ld
     }
 
 }

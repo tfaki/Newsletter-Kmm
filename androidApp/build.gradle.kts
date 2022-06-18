@@ -3,6 +3,7 @@ plugins {
     kotlin("android")
     kotlin("kapt")
     id("dagger.hilt.android.plugin")
+    kotlin("plugin.serialization")
 }
 
 val composeVersion = "1.2.0-alpha01"
@@ -51,4 +52,7 @@ dependencies {
     implementation("com.google.dagger:hilt-android:$hiltVersion")
     implementation("androidx.hilt:hilt-navigation:$hiltNavigationVersion")
     kapt("com.google.dagger:hilt-compiler:$hiltVersion")
+
+    //ktor
+    implementation("io.ktor:ktor-client-android:1.6.5")
 }

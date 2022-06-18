@@ -8,10 +8,4 @@ import dagger.hilt.android.HiltAndroidApp
  */
 
 @HiltAndroidApp
-class NewsletterApp: Application() {
-
-    override fun onCreate() {
-        super.onCreate()
-    }
-
-}
+class NewsletterApp: Application()

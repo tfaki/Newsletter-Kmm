@@ -12,10 +12,9 @@
 		7555FF83242A565900829871 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7555FF82242A565900829871 /* ContentView.swift */; };
 		EE21D685285642A500C330EF /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE21D684285642A500C330EF /* ContentViewModel.swift */; };
 		EE21D68F2856586100C330EF /* iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE21D68E2856586100C330EF /* iOSApp.swift */; };
-		EE4E0A97285BDEF400BC2EC5 /* shared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE21D687285645AA00C330EF /* shared.framework */; };
-		EE4E0A98285BDEF400BC2EC5 /* shared.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EE21D687285645AA00C330EF /* shared.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		EE4E0A9B285BE02F00BC2EC5 /* Pods_iosApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE4E0A9A285BE02F00BC2EC5 /* Pods_iosApp.framework */; };
 		EE4E0A9C285BE02F00BC2EC5 /* Pods_iosApp.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EE4E0A9A285BE02F00BC2EC5 /* Pods_iosApp.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		EE7E45EB285DE4A8007A5AC3 /* RowItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7E45EA285DE4A8007A5AC3 /* RowItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -26,7 +25,6 @@
 			dstSubfolderSpec = 10;
 			files = (
 				EE4E0A9C285BE02F00BC2EC5 /* Pods_iosApp.framework in Embed Frameworks */,
-				EE4E0A98285BDEF400BC2EC5 /* shared.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -47,6 +45,7 @@
 		EE21D68E2856586100C330EF /* iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSApp.swift; sourceTree = "<group>"; };
 		EE4E0A96285BDEBC00BC2EC5 /* com */ = {isa = PBXFileReference; lastKnownFileType = folder; name = com; path = ../shared/src/commonMain/kotlin/com; sourceTree = "<group>"; };
 		EE4E0A9A285BE02F00BC2EC5 /* Pods_iosApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_iosApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE7E45EA285DE4A8007A5AC3 /* RowItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,7 +54,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				EE4E0A9B285BE02F00BC2EC5 /* Pods_iosApp.framework in Frameworks */,
-				EE4E0A97285BDEF400BC2EC5 /* shared.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,11 +98,10 @@
 		7555FF7D242A565900829871 /* iosApp */ = {
 			isa = PBXGroup;
 			children = (
+				EE7E45E8285DE47A007A5AC3 /* ui */,
 				058557BA273AAA24004C7B11 /* Assets.xcassets */,
-				7555FF82242A565900829871 /* ContentView.swift */,
 				7555FF8C242A565B00829871 /* Info.plist */,
 				058557D7273AAEEB004C7B11 /* Preview Content */,
-				EE21D684285642A500C330EF /* ContentViewModel.swift */,
 				EE21D68E2856586100C330EF /* iOSApp.swift */,
 			);
 			path = iosApp;
@@ -119,6 +116,24 @@
 				B91B57D328253439F100D668 /* Pods_iosApp.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EE7E45E8285DE47A007A5AC3 /* ui */ = {
+			isa = PBXGroup;
+			children = (
+				EE7E45E9285DE492007A5AC3 /* component */,
+				EE21D684285642A500C330EF /* ContentViewModel.swift */,
+				7555FF82242A565900829871 /* ContentView.swift */,
+			);
+			path = ui;
+			sourceTree = "<group>";
+		};
+		EE7E45E9285DE492007A5AC3 /* component */ = {
+			isa = PBXGroup;
+			children = (
+				EE7E45EA285DE4A8007A5AC3 /* RowItem.swift */,
+			);
+			path = component;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -239,6 +254,7 @@
 				7555FF83242A565900829871 /* ContentView.swift in Sources */,
 				EE21D68F2856586100C330EF /* iOSApp.swift in Sources */,
 				EE21D685285642A500C330EF /* ContentViewModel.swift in Sources */,
+				EE7E45EB285DE4A8007A5AC3 /* RowItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

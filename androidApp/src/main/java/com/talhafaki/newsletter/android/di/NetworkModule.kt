@@ -1,10 +1,13 @@
 package com.talhafaki.newsletter.android.di
 
-import com.talhafaki.newsletter.data.TopHeadlineRepository
+import com.talhafaki.newsletter.data.KtorClientFactory
+import com.talhafaki.newsletter.data.RemoteClient
+import com.talhafaki.newsletter.data.RemoteClientImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
+import io.ktor.client.*
 import javax.inject.Singleton
 
 /**
@@ -17,8 +20,13 @@ object NetworkModule{
 
     @Singleton
     @Provides
-    fun provideTopHeadlineService(): TopHeadlineRepository {
-        return TopHeadlineRepository()
+    fun provideHttpClient(): HttpClient {
+        return KtorClientFactory().build()
     }
 
+    @Singleton
+    @Provides
+    fun provideRemoteClient(httpClient: HttpClient): RemoteClient {
+        return RemoteClientImpl(httpClient = httpClient)
+    }
 }
