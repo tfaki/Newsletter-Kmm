@@ -18,13 +18,17 @@ MVP sample created for Kotlin Multiplatform Mobile using NewsApi
  <img align="center" src="newsletter.png" width="300" height="550"/>
 </p>
 
-## iOS (Coming Soon)
-Will be developed with SwiftUi
+## iOS ScreenShot
+<p>
+ <img align="center" src="newsletter_ios.png" width="300" height="550"/>
+</p>
 
 ## Tech Stack
 - Kotlin
+- Swift
 - Jetpack Compose
+- SwiftUI
 - Hilt
 - Coil
 - Ktor
-- Livedata
+- Flow
