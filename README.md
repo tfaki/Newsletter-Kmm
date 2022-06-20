@@ -55,3 +55,9 @@ MVP sample created for Kotlin Multiplatform Mobile using NewsApi
 - Coil
 - Ktor
 - Flow
+
+## Did you find this repository helpful?
+Don't forget give a star.
+
+## Didn't you?
+Then fork this repo, make it better and don't forgot give a STAR.
