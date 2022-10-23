@@ -8,7 +8,7 @@ plugins {
 }
 
 version = "1.0"
-val ktorVersion = "1.6.5"
+val ktorVersion = "2.1.0"
 
 kotlin {
     android()
@@ -36,15 +36,22 @@ kotlin {
             dependencies {
                 implementation("io.ktor:ktor-client-serialization:${ktorVersion}")
                 implementation("io.ktor:ktor-client-logging:${ktorVersion}")
+                implementation("io.ktor:ktor-client-content-negotiation:${ktorVersion}")
+                implementation("io.ktor:ktor-serialization-kotlinx-json:${ktorVersion}")
+                implementation("io.ktor:ktor-client-json:${ktorVersion}")
+                implementation("io.ktor:ktor-client-core:${ktorVersion}")
+
             }
         }
         val androidMain by getting {
+            dependsOn(commonMain)
             dependencies {
                 implementation("io.ktor:ktor-client-android:${ktorVersion}")
             }
         }
 
         val iosMain by getting {
+            dependsOn(commonMain)
             dependencies {
                 implementation("io.ktor:ktor-client-ios:${ktorVersion}")
             }
@@ -78,14 +85,15 @@ kotlin {
 }
 
 android {
-    compileSdk = 32
+    compileSdk = 33
+    namespace = "com.talhafaki.newsletter.android"
     sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
     defaultConfig {
-        minSdk = 24
-        targetSdk = 32
+        minSdk = 23
+        targetSdk = 33
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
     }
 }

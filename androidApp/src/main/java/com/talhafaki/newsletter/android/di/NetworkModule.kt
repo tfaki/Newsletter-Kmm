@@ -1,6 +1,5 @@
 package com.talhafaki.newsletter.android.di
 
-import com.talhafaki.newsletter.data.KtorClientFactory
 import com.talhafaki.newsletter.data.RemoteClient
 import com.talhafaki.newsletter.data.RemoteClientImpl
 import dagger.Module
@@ -16,17 +15,11 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-object NetworkModule{
+object NetworkModule {
 
     @Singleton
     @Provides
-    fun provideHttpClient(): HttpClient {
-        return KtorClientFactory().build()
-    }
-
-    @Singleton
-    @Provides
-    fun provideRemoteClient(httpClient: HttpClient): RemoteClient {
-        return RemoteClientImpl(httpClient = httpClient)
+    fun provideRemoteClient(): RemoteClient {
+        return RemoteClientImpl()
     }
 }

@@ -1,6 +1,5 @@
 package com.talhafaki.newsletter.di
 
-import com.talhafaki.newsletter.data.KtorClientFactory
 import com.talhafaki.newsletter.data.RemoteClient
 import com.talhafaki.newsletter.data.RemoteClientImpl
 
@@ -10,8 +9,6 @@ import com.talhafaki.newsletter.data.RemoteClientImpl
 class NetworkModule {
 
     val remoteClient: RemoteClient by lazy {
-        RemoteClientImpl(
-            httpClient = KtorClientFactory().build(),
-        )
+        RemoteClientImpl()
     }
 }
